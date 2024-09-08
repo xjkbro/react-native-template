@@ -7,6 +7,7 @@ const FormField = ({
 	placeholder,
 	handleTextChange,
 	className,
+	multiline,
 	...props
 }) => {
 	const [showPassword, setShowPassword] = useState(false);
@@ -20,6 +21,7 @@ const FormField = ({
 					placeholderTextColor="gray-500"
 					value={value}
 					onChangeText={handleTextChange}
+					multiline={multiline ?? false}
 					secureTextEntry={title === "Password" && !showPassword}
 				/>
 			</View>

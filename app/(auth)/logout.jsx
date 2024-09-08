@@ -4,7 +4,8 @@ import React from "react";
 const logout = () => {
 	async function handleLogout() {
 		try {
-			await SecureStore.deleteItemAsync("userToken");
+			await SecureStore.deleteItemAsync("userAccessToken");
+			await SecureStore.deleteItemAsync("userRefreshToken");
 			await AsyncStorage.removeItem("userData");
 			setIsAuthenticated(false);
 		} catch (error) {
